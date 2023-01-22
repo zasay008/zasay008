@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addproduct.AddproductFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/icon_pro"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24" />
+
+
+            <EditText
+                android:id="@+id/barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/barcodetext_pro"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColorHint="#757575"
+                android:layout_below="@id/icon_pro"/>
+
+            <EditText
+                android:id="@+id/namepro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/nametext_pro"
+                android:inputType="textCapWords|textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#757575"
+                android:layout_below="@id/barcode"/>
+
+            <EditText
+                android:id="@+id/category_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/categorytext_pro"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="15dp"
+                android:textColorHint="#757575"
+                android:layout_below="@id/namepro"/>
+
+            <EditText
+                android:id="@+id/stock_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/stocktext_pro"
+                android:inputType="text|textCapWords"
+                android:padding="15dp"
+                android:textColorHint="#757575"
+                android:layout_below="@id/category_pro"/>
+
+            <EditText
+                android:id="@+id/price_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/pricetext_pro"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:padding="15dp"
+                android:textColorHint="#757575"
+                android:layout_below="@id/stock_pro"/>
+
+            <Button
+                android:id="@+id/addbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_pro"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:layout_below="@id/price_pro"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
