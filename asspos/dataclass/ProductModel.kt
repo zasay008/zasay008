@@ -2,11 +2,10 @@ package com.example.asspos.dataclass
 
 data class ProductModel (
 
-    private var product_barcode: String? = null,
-    private var product_name: String? = null,
-    private var product_cat: String? = null,
-    private var product_stk: String? = null,
-    private var product_pri: String? = null
-
+    var product_barcode: String? = null,
+    var product_name: String? = null,
+    var product_cat: String? = null,
+    var product_stk: String? = null,
+    var product_pri: String? = null
 
 )
