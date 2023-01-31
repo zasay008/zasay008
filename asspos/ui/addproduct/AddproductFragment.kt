@@ -41,6 +41,7 @@ class AddproductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        //เริ่มก๊อปตรงนี้ได้เลย
         val v: View = inflater.inflate(R.layout.fragment_addproduct, container, false)
         auth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().getReference("users")
@@ -105,5 +106,5 @@ class AddproductFragment : Fragment() {
                     Toast.makeText(activity, "มีบางอย่างผิดพลาด", Toast.LENGTH_SHORT).show()
                 }
         }
-    }
+    }//ถึงแค่นี้แหละ
 }
