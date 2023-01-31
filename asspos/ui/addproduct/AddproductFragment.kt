@@ -25,6 +25,7 @@ import java.net.URI
 
 class AddproductFragment : Fragment() {
 
+    //เริ่มก๊อปตรงนี้ได้เลย
     private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
 
@@ -41,7 +42,6 @@ class AddproductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        //เริ่มก๊อปตรงนี้ได้เลย
         val v: View = inflater.inflate(R.layout.fragment_addproduct, container, false)
         auth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().getReference("users")
