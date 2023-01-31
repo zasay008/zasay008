@@ -106,5 +106,5 @@ class AddproductFragment : Fragment() {
                     Toast.makeText(activity, "มีบางอย่างผิดพลาด", Toast.LENGTH_SHORT).show()
                 }
         }
-    }//ถึงแค่นี้แหละ
+    }//ถึงแค่นี้แหละและไปไฟล์ ProductModel ตรงโฟเดอร์ dataclass
 }
