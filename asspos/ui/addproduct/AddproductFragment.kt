@@ -55,9 +55,7 @@ class AddproductFragment : Fragment() {
         add_pro.setOnClickListener {
 
             addproduct()
-
         }
-
         return v
     }
 
@@ -68,23 +66,44 @@ class AddproductFragment : Fragment() {
         val cat_txt = cat_pro.text.toString()
         val stk_txt = stk_pro.text.toString()
         val pri_txt = pri_pro.text.toString()
-        var users: FirebaseUser? = auth.currentUser
-        val finaluser = users?.email
-        var resultemmail = finaluser?.replace(".","")
+        val user = auth.currentUser!!.uid
+        /* val resultemmail = user.replace(".","")
         if (bar_txt.isEmpty() || name_txt.isEmpty() || cat_txt.isEmpty() || stk_txt.isEmpty() || pri_txt.isEmpty()){
             val productModel: ProductModel = ProductModel(bar_txt, name_txt, cat_txt, stk_txt, pri_txt)
-            if (resultemmail != null) {
-                databaseReference.child(resultemmail).child("ProductModel").child(bar_txt).setValue(productModel)
-                bar_pro.text
-                name_pro.text
-                cat_pro.text
-                stk_pro.text
-                pri_pro.text
-                Toast.makeText(activity, name_txt + "ถูกเพิ่มเข้าไปสำเร็จ", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(activity, "กรุณาตรวจสอบความถูกต้องอีกครั้ง", Toast.LENGTH_SHORT).show()
-            }
+            databaseReference.child(user).child("ProductModel").push().setValue(productModel)
+            Toast.makeText(activity, name_txt + "ถูกเพิ่มเข้าไปสำเร็จ", Toast.LENGTH_SHORT).show()
 
+        }*/
+        if (bar_txt.isEmpty()){
+            bar_pro.error = "กรุณาใส่รหัสสินค้า"
+        }
+        if (name_txt.isEmpty()){
+            name_pro.error = "กรุณาใส่ชื่อสินค้า"
+        }
+        if (cat_txt.isEmpty()){
+            cat_pro.error = "กรุณาใส่หมวดหมู่สินค้า"
+        }
+        if (stk_txt.isEmpty()){
+            stk_pro.error = "กรุณาใส่จำนวนสินค้า"
+        }
+        if (pri_txt.isEmpty()){
+            pri_pro.error = "กรุณาใส่ราคาสินค้า"
+        } else {
+
+            val productModel: ProductModel =
+                ProductModel(bar_txt, name_txt, cat_txt, stk_txt, pri_txt)
+            databaseReference.child(user).child("ProductModel").push().setValue(productModel)
+                .addOnCompleteListener {
+                    Toast.makeText(activity, name_txt + "ถูกเพิ่มเข้าไปสำเร็จ", Toast.LENGTH_SHORT)
+                        .show()
+                    bar_pro.text.clear()
+                    name_pro.text.clear()
+                    cat_pro.text.clear()
+                    stk_pro.text.clear()
+                    pri_pro.text.clear()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(activity, "มีบางอย่างผิดพลาด", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 }
